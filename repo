@@ -1,0 +1,8 @@
+opam-version: "2.0"
+browse: "..."
+upstream: "..."
+announce: [
+"""
+flambda2 opam dep repository
+"""
+]
