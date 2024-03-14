@@ -7,12 +7,11 @@ homepage: "https://github.com/ocaml/dune"
 doc: "https://dune.readthedocs.io/"
 bug-reports: "https://github.com/ocaml/dune/issues"
 build: [
-  ["%{prefix}%/init_deps/bin/ocaml" "boot/bootstrap.ml" "-j" jobs]
-  ["./_boot/dune.exe" "build" "dune.install" "--release" "--profile" "dune-bootstrap" "-j" jobs]
-
+  ["sh" "-exc" "PATH=%{prefix}%/init_deps/bin/:$PATH ocaml boot/bootstrap.ml -j %{jobs}%"]
+  ["sh" "-exc" "PATH=%{prefix}%/init_deps/bin/:$PATH ./_boot/dune.exe build dune.install --release --profile dune-bootstrap -j %{jobs}%"]
 ]
 install: [
-  ["./_boot/dune.exe" "install" "--prefix" "%{prefix}%/init_deps/" "dune"]
+  ["sh" "-exc" "PATH=%{prefix}%/init_deps/bin/:$PATH ./_boot/dune.exe install --prefix %{prefix}%/init_deps/ dune"]
 ]
 depends: [
   "init-compiler"
