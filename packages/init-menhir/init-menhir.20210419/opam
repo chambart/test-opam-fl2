@@ -1,5 +1,4 @@
 opam-version: "2.0"
-maintainer: "francois.pottier@inria.fr"
 authors: [
   "François Pottier <francois.pottier@inria.fr>"
   "Yann Régis-Gianas <yrg@pps.univ-paris-diderot.fr>"
@@ -17,12 +16,8 @@ install: [
 depends: [
   "init-compiler"
   "init-dune"
-(*
-  "menhirLib" {= version}
-  "menhirSdk" {= version}
-*)
 ]
-synopsis: "An LR(1) parser generator"
+synopsis: "Menhir used for bootstraping"
 url {
   src:
     "https://gitlab.inria.fr/fpottier/menhir/-/archive/20210419/archive.tar.gz"
